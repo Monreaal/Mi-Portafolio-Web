@@ -8,14 +8,32 @@
   --shadow-l: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 body{
-  @apply bg-gray-950 text-white flex items-center justify-center min-h-screen italic
+  @apply bg-gray-950 text-white items-center justify-center min-h-screen italic flex flex-col
 }
+
 nav{
   @apply fixed top-0 left-0 w-full flex justify-center gap-4 py-4 z-10
 }
 nav button{
   @apply bg-gray-800 hover:bg-orange-300  focus:bg-orange-500 active:text-black py-1 px-3 mx-2 rounded-full
 }
+
+.contenedorPresentacion{
+  @apply p-8 md:p-16 w-full
+}
+.presentacion{
+  @apply w-full mx-auto grid grid-cols-5 grid-rows-3 md:grid-cols-5  md:grid-rows-3 gap-x-0 gap-y-0 items-start
+}
+.fullstackText{
+  @apply text-7xl col-span-2 font-black font-mono tracking-tight leading-none md:col-start-1 md:row-start-1
+}
+.jrText{
+  @apply text-5xl py-7 row-span-2 col-span-2 font-black font-mono tracking-tight leading-none md:col-start-3 md:row-start-1
+}
+.miDescripcion{
+  @apply text-gray-400 col-span-2 text-sm sm:text-base max-w-md md:row-start-2 md:col-start-1
+}
+
 
 .contenedorCarouselSlides{
   @apply relative w-full mx-auto py-6 overflow-hidden 

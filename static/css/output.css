@@ -11,15 +11,27 @@
     --color-orange-300: oklch(83.7% 0.128 66.29);
     --color-orange-500: oklch(70.5% 0.213 47.604);
     --color-indigo-600: oklch(51.1% 0.262 276.966);
+    --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-gray-800: oklch(27.8% 0.033 256.848);
     --color-gray-950: oklch(13% 0.028 261.692);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
+    --container-md: 28rem;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
+    --text-7xl: 4.5rem;
+    --text-7xl--line-height: 1;
     --font-weight-bold: 700;
+    --font-weight-black: 900;
+    --tracking-tight: -0.025em;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -178,10 +190,21 @@
   .static {
     position: static;
   }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+  .not-italic {
+    font-style: normal;
+  }
 }
 body {
   display: flex;
   min-height: 100vh;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: var(--color-gray-950);
@@ -215,6 +238,84 @@ nav button {
   }
   &:active {
     color: var(--color-black);
+  }
+}
+.contenedorPresentacion {
+  width: 100%;
+  padding: calc(var(--spacing) * 8);
+  @media (width >= 48rem) {
+    padding: calc(var(--spacing) * 16);
+  }
+}
+.presentacion {
+  margin-inline: auto;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  align-items: flex-start;
+  column-gap: 0px;
+  row-gap: 0px;
+  @media (width >= 48rem) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  @media (width >= 48rem) {
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+}
+.fullstackText {
+  grid-column: span 2 / span 2;
+  font-family: var(--font-mono);
+  font-size: var(--text-7xl);
+  line-height: var(--tw-leading, var(--text-7xl--line-height));
+  --tw-leading: 1;
+  line-height: 1;
+  --tw-font-weight: var(--font-weight-black);
+  font-weight: var(--font-weight-black);
+  --tw-tracking: var(--tracking-tight);
+  letter-spacing: var(--tracking-tight);
+  @media (width >= 48rem) {
+    grid-column-start: 1;
+  }
+  @media (width >= 48rem) {
+    grid-row-start: 1;
+  }
+}
+.jrText {
+  grid-column: span 2 / span 2;
+  grid-row: span 2 / span 2;
+  padding-block: calc(var(--spacing) * 7);
+  font-family: var(--font-mono);
+  font-size: var(--text-5xl);
+  line-height: var(--tw-leading, var(--text-5xl--line-height));
+  --tw-leading: 1;
+  line-height: 1;
+  --tw-font-weight: var(--font-weight-black);
+  font-weight: var(--font-weight-black);
+  --tw-tracking: var(--tracking-tight);
+  letter-spacing: var(--tracking-tight);
+  @media (width >= 48rem) {
+    grid-column-start: 3;
+  }
+  @media (width >= 48rem) {
+    grid-row-start: 1;
+  }
+}
+.miDescripcion {
+  grid-column: span 2 / span 2;
+  max-width: var(--container-md);
+  font-size: var(--text-sm);
+  line-height: var(--tw-leading, var(--text-sm--line-height));
+  color: var(--color-gray-400);
+  @media (width >= 40rem) {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  @media (width >= 48rem) {
+    grid-column-start: 1;
+  }
+  @media (width >= 48rem) {
+    grid-row-start: 2;
   }
 }
 .contenedorCarouselSlides {
@@ -304,6 +405,14 @@ nav button {
   syntax: "*";
   inherits: false;
 }
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-shadow {
   syntax: "*";
   inherits: false;
@@ -388,6 +497,8 @@ nav button {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-font-weight: initial;
+      --tw-leading: initial;
+      --tw-tracking: initial;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;
       --tw-shadow-alpha: 100%;
