@@ -8,7 +8,7 @@
   --shadow-l: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 body{
-  @apply bg-gray-950 text-white items-center justify-center min-h-screen italic flex flex-col
+  @apply bg-gray-950 text-white items-center justify-center min-h-screen italic flex flex-col py-9 w-full
 }
 
 nav{
@@ -18,25 +18,34 @@ nav button{
   @apply bg-gray-800 hover:bg-orange-300  focus:bg-orange-500 active:text-black py-1 px-3 mx-2 rounded-full
 }
 
-.contenedorPresentacion{
-  @apply p-8 md:p-16 w-full
+.contenedorPresentacion {
+@apply relative flex flex-col md:flex-row justify-between md:items-center w-full px-4 md:p-7 gap-6 md:gap-10 md:min-w-[786px];
 }
-.presentacion{
-  @apply w-full mx-auto grid grid-cols-5 grid-rows-3 md:grid-cols-5  md:grid-rows-3 gap-x-0 gap-y-0 items-start
+
+.grupoTextos {
+  @apply grid grid-cols-1 md:grid-cols-[auto_1fr] md:gap-x-8 md:gap-y-0 w-full md:pt-0 md:items-center;
 }
-.fullstackText{
-  @apply text-7xl col-span-2 font-black font-mono tracking-tight leading-none md:col-start-1 md:row-start-1
+
+.fullstackText {
+  @apply md:row-start-1 md:col-start-1 md:col-span-2 text-5xl md:text-8xl font-black font-mono tracking-normal md:tracking-widest text-white leading-none mb-4 md:mb-2 w-full;
 }
-.jrText{
-  @apply text-5xl py-7 row-span-2 col-span-2 font-black font-mono tracking-tight leading-none md:col-start-3 md:row-start-1
+
+.jrText {
+  @apply md:row-start-2 md:col-start-2 text-4xl md:text-7xl font-black font-mono tracking-normal md:tracking-widest text-white mb-4 md:mb-0;
 }
-.miDescripcion{
-  @apply text-gray-400 col-span-2 text-sm sm:text-base max-w-md md:row-start-2 md:col-start-1
+
+.miDescripcion {
+  /* Escritorio: Lo forzamos a la fila 2, columna 1 (A la izquierda) */
+  @apply md:row-start-2 md:col-start-1 text-sm md:text-base text-gray-400 italic max-w-[500px] md:min-w-[200px];
+}
+
+.foto {
+  @apply absolute mt-14 md:mt-0 right-7 md:static w-16 h-16 md:w-72 md:h-72 rounded-full border border-orange-600 shrink-0 object-cover;
 }
 
 
 .contenedorCarouselSlides{
-  @apply relative w-full mx-auto py-6 overflow-hidden 
+  @apply relative w-full mx-auto py-6 overflow-hidden
 }
 .carouselSlides{
   @apply flex w-full justify-center 
