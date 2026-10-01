@@ -8,18 +8,36 @@
   --shadow-l: 0 0 20px rgba(0, 0, 0, 0.5);
   --blur-xs: 2px;
 }
+@utility no-scrollbar {
+  /* Firefox */
+  scrollbar-width: none; 
+  /* IE y Edge */
+  -ms-overflow-style: none; 
+  
+  /* Chrome, Safari y Opera (usando anidamiento con &) */
+  &::-webkit-scrollbar {
+    display: none; 
+  }
+}
+
 body{
   @apply bg-zinc-900 text-white items-center justify-center min-h-screen flex flex-col w-full
 }
 
 nav{
-  @apply bg-zinc-900/90 fixed rounded-full bottom-0 md:top-0 md:bottom-auto flex justify-center gap-2 md:gap-4 p-2 m-3 z-20 items-center
+  @apply md:bg-zinc-900/90 bg-white fixed rounded-full bottom-0 md:top-0 md:bottom-auto overflow-x-auto no-scrollbar flex flex-row justify-center gap-2 md:gap-4 p-2 m-3 z-20 items-center 
 }
 nav button{
-  @apply bg-zinc-800 hover:bg-orange-300  focus:bg-orange-500 active:text-black py-1 px-5 md:mx-2 rounded-full
+  @apply bg-zinc-800 hover:bg-orange-300  focus:bg-orange-500 active:text-black py-1 px-4 md:mx-2 rounded-full flex gap-4 justify-center items-center w-9 md:w-auto
+}
+button img{ 
+  @apply  min-h-4 min-w-4 max-h-4 max-w-4
+}
+nav p{ /*hidden md:block Oculto en moviles, se muestra en pantallas grandes*/
+  @apply hidden md:block
 }
 .contenedorPresentacion { /**md:grid-cols-[1fr_1fr_minmax(0,350px)] define el ancho maximo de la col-3*/
-@apply flex mb-5 px-3 md:pt-8 grid grid-cols-2 grid-rows-3 md:grid-cols-[minmax(0,500px)_minmax(0,800px)_minmax(0,300px)] md:grid-rows-2 text-white font-bold text-left w-full
+  @apply  mb-5 mt-2 px-5 md:pt-12 md:m-3 grid grid-cols-2 grid-rows-3 md:grid-cols-[minmax(0,500px)_minmax(0,800px)_minmax(0,300px)] md:grid-rows-2 text-white font-bold text-left 
 }
 .fullstackText {
   @apply col-start-1 row-start-1 text-5xl md:text-8xl md:col-span-2 font-black font-mono flex justify-start items-end md:tracking-widest

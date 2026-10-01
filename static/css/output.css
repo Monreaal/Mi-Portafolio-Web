@@ -201,12 +201,6 @@
   .z-10 {
     z-index: 10;
   }
-  .table {
-    display: table;
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
   .scale-110 {
     --tw-scale-x: 110%;
     --tw-scale-y: 110%;
@@ -219,22 +213,9 @@
   .resize {
     resize: both;
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
   .shadow-l {
     --tw-shadow: 0 0 20px var(--tw-shadow-color, rgba(0, 0, 0, 0.5));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-orange-500 {
-    --tw-shadow-color: oklch(70.5% 0.213 47.604);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-shadow-color: color-mix(in oklab, var(--color-orange-500) var(--tw-shadow-alpha), transparent);
-    }
   }
   .shadow-orange-500\/50 {
     --tw-shadow-color: color-mix(in srgb, oklch(70.5% 0.213 47.604) 50%, transparent);
@@ -242,15 +223,8 @@
       --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-orange-500) 50%, transparent) var(--tw-shadow-alpha), transparent);
     }
   }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
-  }
   .blur-xs {
     --tw-blur: blur(var(--blur-xs));
-    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
-  }
-  .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
 }
@@ -269,15 +243,19 @@ nav {
   bottom: 0px;
   z-index: 20;
   margin: calc(var(--spacing) * 3);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: calc(var(--spacing) * 2);
+  overflow-x: auto;
   border-radius: calc(infinity * 1px);
-  background-color: color-mix(in srgb, oklch(21% 0.006 285.885) 90%, transparent);
-  @supports (color: color-mix(in lab, red, red)) {
-    background-color: color-mix(in oklab, var(--color-zinc-900) 90%, transparent);
-  }
+  background-color: var(--color-white);
   padding: calc(var(--spacing) * 2);
   @media (width >= 48rem) {
     top: 0px;
@@ -288,11 +266,22 @@ nav {
   @media (width >= 48rem) {
     gap: calc(var(--spacing) * 4);
   }
+  @media (width >= 48rem) {
+    background-color: color-mix(in srgb, oklch(21% 0.006 285.885) 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-zinc-900) 90%, transparent);
+    }
+  }
 }
 nav button {
+  display: flex;
+  width: calc(var(--spacing) * 9);
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--spacing) * 4);
   border-radius: calc(infinity * 1px);
   background-color: var(--color-zinc-800);
-  padding-inline: calc(var(--spacing) * 5);
+  padding-inline: calc(var(--spacing) * 4);
   padding-block: var(--spacing);
   &:hover {
     @media (hover: hover) {
@@ -308,19 +297,36 @@ nav button {
   @media (width >= 48rem) {
     margin-inline: calc(var(--spacing) * 2);
   }
+  @media (width >= 48rem) {
+    width: auto;
+  }
+}
+button img {
+  max-height: calc(var(--spacing) * 4);
+  min-height: calc(var(--spacing) * 4);
+  max-width: calc(var(--spacing) * 4);
+  min-width: calc(var(--spacing) * 4);
+}
+nav p {
+  display: none;
+  @media (width >= 48rem) {
+    display: block;
+  }
 }
 .contenedorPresentacion {
+  margin-top: calc(var(--spacing) * 2);
   margin-bottom: calc(var(--spacing) * 5);
-  display: flex;
   display: grid;
-  width: 100%;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: repeat(3, minmax(0, 1fr));
-  padding-inline: calc(var(--spacing) * 3);
+  padding-inline: calc(var(--spacing) * 5);
   text-align: left;
   --tw-font-weight: var(--font-weight-bold);
   font-weight: var(--font-weight-bold);
   color: var(--color-white);
+  @media (width >= 48rem) {
+    margin: calc(var(--spacing) * 3);
+  }
   @media (width >= 48rem) {
     grid-template-columns: minmax(0,500px) minmax(0,800px) minmax(0,300px);
   }
@@ -328,7 +334,7 @@ nav button {
     grid-template-rows: repeat(2, minmax(0, 1fr));
   }
   @media (width >= 48rem) {
-    padding-top: calc(var(--spacing) * 8);
+    padding-top: calc(var(--spacing) * 12);
   }
 }
 .fullstackText {
@@ -680,11 +686,6 @@ nav button {
   syntax: "*";
   inherits: false;
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-shadow {
   syntax: "*";
   inherits: false;
@@ -750,11 +751,6 @@ nav button {
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-blur {
   syntax: "*";
   inherits: false;
@@ -816,6 +812,11 @@ nav button {
   syntax: "*";
   inherits: false;
 }
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-duration {
   syntax: "*";
   inherits: false;
@@ -846,7 +847,6 @@ nav button {
       --tw-rotate-z: initial;
       --tw-skew-x: initial;
       --tw-skew-y: initial;
-      --tw-border-style: solid;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;
       --tw-shadow-alpha: 100%;
@@ -861,7 +861,6 @@ nav button {
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;
@@ -877,6 +876,7 @@ nav button {
       --tw-drop-shadow-size: initial;
       --tw-font-weight: initial;
       --tw-tracking: initial;
+      --tw-border-style: solid;
       --tw-duration: initial;
       --tw-translate-x: 0;
       --tw-translate-y: 0;
