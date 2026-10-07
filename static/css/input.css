@@ -19,9 +19,11 @@
     display: none; 
   }
 }
-
+button{
+  @apply cursor-pointer
+}
 body{
-  @apply bg-zinc-900 text-white items-center justify-center min-h-screen flex flex-col w-full
+  @apply bg-zinc-900 text-white items-center justify-center min-h-screen flex flex-col w-full pb-10
 }
 
 nav{
@@ -34,10 +36,10 @@ button img{
   @apply  min-h-4 min-w-4 max-h-4 max-w-4
 }
 nav p{ /*hidden md:block Oculto en moviles, se muestra en pantallas grandes*/
-  @apply hidden md:block
+  @apply hidden md:block font-light
 }
 .contenedorPresentacion { /**md:grid-cols-[1fr_1fr_minmax(0,350px)] define el ancho maximo de la col-3*/
-  @apply  mb-5 mt-2 px-5 md:pt-12 md:m-3 grid grid-cols-2 grid-rows-3 md:grid-cols-[minmax(0,500px)_minmax(0,800px)_minmax(0,300px)] md:grid-rows-2 text-white font-bold text-left 
+  @apply  mb-5 mt-2 px-3 md:pt-12 md:m-3 grid grid-cols-2 grid-rows-3 md:grid-cols-[minmax(0,500px)_minmax(0,800px)_minmax(0,300px)] md:grid-rows-2 text-white font-bold text-left 
 }
 .fullstackText {
   @apply col-start-1 row-start-1 text-5xl md:text-8xl md:col-span-2 font-black font-mono flex justify-start items-end md:tracking-widest
@@ -50,11 +52,11 @@ nav p{ /*hidden md:block Oculto en moviles, se muestra en pantallas grandes*/
 .miDescripcion {
   @apply  col-start-1 col-span-2 row-start-3 md:col-span-1 md:row-start-2 max-w-[500px] md:min-w-[200px] flex items-start 
 }
-.miDescripcion p{
-  @apply md:relative md:left-2 text-gray-400 italic text-sm md:text-base 
+.p-normal{
+  @apply md:relative md:left-2 text-gray-400 italic text-sm md:text-base font-normal
 }
-.miDescripcion span{
-  @apply font-bold not-italic text-white
+.p-bold{
+  @apply font-semibold italic text-white
 }
 
 .foto{
@@ -101,4 +103,23 @@ nav p{ /*hidden md:block Oculto en moviles, se muestra en pantallas grandes*/
 
 .descripcionProyecto{
   @apply bg-black/50 absolute right-0 w-7/10 h-full rounded-r-2xl p-3
+}
+
+.aboutMe{
+  @apply w-full h-full grid grid-cols-1 md:grid-cols-[minmax(0,200px)_minmax(0,800px)] items-center justify-start gap-4 md:gap-8 p-4 md:p-8
+}
+
+.skillContainer{
+  @apply w-full h-full grid grid-cols-1 md:grid-cols-2 items-center justify-start gap-2 md:gap-4 p-4 md:p-8
+}
+
+.skillCard {
+  @apply h-50 w-full md:h-50 m-4 p-4 rounded-2xl flex flex-col col-start-1 items-center justify-center border border-white shadow-md shadow-gray-600 transition-all duration-300 hover:scale-105 hover:bg-white hover:text-black
+}
+
+.skillsImg{
+  @apply col-start-2 row-start-1 row-span-3 flex items-center justify-center 
+}
+.skillsImg img{
+  @apply max-h-[750px] filter drop-shadow-lg shadow-white transition-all duration-300 hover:scale-105 hidden md:block
 }
