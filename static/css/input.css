@@ -110,16 +110,29 @@ nav p{ /*hidden md:block Oculto en moviles, se muestra en pantallas grandes*/
 }
 
 .skillContainer{
-  @apply w-full h-full grid grid-cols-1 md:grid-cols-2 items-center justify-start gap-2 md:gap-4 p-4 md:p-8
+  @apply w-full h-full justify-start flex flex-col p-4 md:p-8 gap-5
 }
 
-.skillCard {
-  @apply h-50 w-full md:h-50 m-4 p-4 rounded-2xl flex flex-col col-start-1 items-center justify-center border border-white shadow-md shadow-gray-600 transition-all duration-300 hover:scale-105 hover:bg-white hover:text-black
+.skillContainer h1{
+  @apply text-3xl md:text-5xl font-semibold italic text-white drop-shadow-l shadow-white
 }
 
-.skillsImg{
-  @apply col-start-2 row-start-1 row-span-3 flex items-center justify-center 
+.skillTitle{
+  @apply text-xl md:text-2xl font-semibold italic text-white
 }
-.skillsImg img{
-  @apply max-h-[750px] filter drop-shadow-lg shadow-white transition-all duration-300 hover:scale-105 hidden md:block
+
+.skillsSection{
+  @apply border-white border-2 w-full h-full flex flex-wrap gap-4 md:gap-8 p-4 items-center md:justify-start justify-center
+}
+
+.stackItem{
+  @apply flex flex-col gap-2 items-center justify-center hover:scale-105 transition p-1
+}
+
+.stackIcon{
+  @apply rounded-full flex items-center justify-center p-4
+}
+
+.stackIcon img{
+  @apply  h-11 w-11 md:h-15 md:w-15 
 }
