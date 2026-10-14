@@ -26,17 +26,56 @@ body{
   @apply bg-zinc-900 text-white items-center justify-center min-h-screen flex flex-col w-full pb-10
 }
 
-nav{
-  @apply md:bg-zinc-900/90 bg-white fixed rounded-full bottom-0 md:top-0 md:bottom-auto overflow-x-auto no-scrollbar flex flex-row justify-center gap-2 md:gap-4 p-2 m-3 z-20 items-center 
+nav {
+  @apply md:bg-zinc-900/90 bg-white/70 fixed rounded-full bottom-0 md:top-0 md:bottom-auto overflow-x-auto no-scrollbar flex flex-row justify-center gap-2 md:gap-4 p-2 m-3 z-20 items-center;
 }
-nav button{
-  @apply bg-zinc-800 hover:bg-orange-300  focus:bg-orange-500 active:text-black py-1 px-4 md:mx-2 rounded-full flex gap-4 justify-center items-center w-9 md:w-auto
+
+nav a {
+  @apply md:bg-zinc-800 bg-white shadow-zinc-800 shadow-xs  hover:bg-orange-300 focus:bg-orange-500 active:text-black py-1 px-4 md:mx-2 rounded-full flex gap-4 justify-center items-center w-10.5 md:w-auto;
 }
-button img{ 
-  @apply  min-h-4 min-w-4 max-h-4 max-w-4
+
+nav p { 
+  @apply hidden md:block font-light;
 }
-nav p{ /*hidden md:block Oculto en moviles, se muestra en pantallas grandes*/
-  @apply hidden md:block font-light
+
+/* 1. Estilos compartidos para TODOS los iconos */
+.icono-nav { 
+  @apply min-h-5 min-w-5  bg-black md:bg-white;
+  /* Propiedades de la máscara en CSS nativo (soportado por todos los navegadores) */
+  mask-size: cover;
+  mask-position: center;
+  -webkit-mask-size: cover;
+  -webkit-mask-position: center;
+}
+
+/* 2. Rutas específicas para cada icono */
+.icono-home { 
+  mask-image: url('/static/images/home-svgrepo-com.svg'); 
+  -webkit-mask-image: url('/static/images/home-svgrepo-com.svg'); 
+}
+.icono-work { 
+  mask-image: url('/static/images/work-alt-svgrepo-com.svg'); 
+  -webkit-mask-image: url('/static/images/work-alt-svgrepo-com.svg'); 
+}
+.icono-profile { 
+  mask-image: url('/static/images/profile-round-1342-svgrepo-com.svg'); 
+  -webkit-mask-image: url('/static/images/profile-round-1342-svgrepo-com.svg'); 
+}
+.icono-skills { 
+  mask-image: url('/static/images/window-dev-tools-svgrepo-com.svg'); 
+  -webkit-mask-image: url('/static/images/window-dev-tools-svgrepo-com.svg'); 
+}
+.icono-experience { 
+  mask-image: url('/static/images/experience-svgrepo-com.svg'); 
+  -webkit-mask-image: url('/static/images/experience-svgrepo-com.svg'); 
+}
+.icono-education { 
+  mask-image: url('/static/images/school-svgrepo-com.svg'); 
+  -webkit-mask-image: url('/static/images/school-svgrepo-com.svg'); 
+}
+.icono-contact { 
+  mask-image: url('/static/images/phone-svgrepo-com.svg'); 
+  -webkit-mask-image: url('/static/images/phone-svgrepo-com.svg'); 
 }
 .contenedorPresentacion { /**md:grid-cols-[1fr_1fr_minmax(0,350px)] define el ancho maximo de la col-3*/
   @apply  mb-5 mt-2 px-3 md:pt-12 md:m-3 grid grid-cols-2 grid-rows-3 md:grid-cols-[minmax(0,500px)_minmax(0,800px)_minmax(0,300px)] md:grid-rows-2 text-white font-bold text-left 
@@ -114,7 +153,7 @@ nav p{ /*hidden md:block Oculto en moviles, se muestra en pantallas grandes*/
 }
 
 .skillContainer h1{
-  @apply text-3xl md:text-5xl font-semibold italic text-white drop-shadow-l shadow-white
+  @apply text-3xl md:text-5xl font-semibold italic text-white drop-shadow-lg shadow-white
 }
 
 .skillTitle{
