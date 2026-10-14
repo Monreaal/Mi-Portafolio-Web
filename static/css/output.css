@@ -8,8 +8,9 @@
       "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-orange-300: oklch(83.7% 0.128 66.29);
     --color-orange-500: oklch(70.5% 0.213 47.604);
+    --color-orange-600: oklch(64.6% 0.222 41.116);
+    --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-zinc-500: oklch(55.2% 0.016 285.938);
@@ -268,7 +269,6 @@ nav {
   }
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
   gap: calc(var(--spacing) * 2);
   overflow-x: auto;
@@ -278,6 +278,12 @@ nav {
     background-color: color-mix(in oklab, var(--color-white) 70%, transparent);
   }
   padding: calc(var(--spacing) * 2);
+  --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.05));
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  --tw-shadow-color: oklch(27.4% 0.006 286.033);
+  @supports (color: color-mix(in lab, red, red)) {
+    --tw-shadow-color: color-mix(in oklab, var(--color-zinc-800) var(--tw-shadow-alpha), transparent);
+  }
   @media (width >= 48rem) {
     top: 0px;
   }
@@ -293,6 +299,9 @@ nav {
       background-color: color-mix(in oklab, var(--color-zinc-900) 90%, transparent);
     }
   }
+  @media (width >= 48rem) {
+    padding-block: calc(var(--spacing) * 2);
+  }
 }
 nav a {
   display: flex;
@@ -300,7 +309,11 @@ nav a {
   align-items: center;
   justify-content: center;
   gap: calc(var(--spacing) * 4);
+  scroll-behavior: smooth;
   border-radius: calc(infinity * 1px);
+  border-bottom-style: var(--tw-border-style);
+  border-bottom-width: 2px;
+  border-color: transparent;
   background-color: var(--color-white);
   padding-inline: calc(var(--spacing) * 4);
   padding-block: var(--spacing);
@@ -310,13 +323,16 @@ nav a {
   @supports (color: color-mix(in lab, red, red)) {
     --tw-shadow-color: color-mix(in oklab, var(--color-zinc-800) var(--tw-shadow-alpha), transparent);
   }
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
   &:hover {
     @media (hover: hover) {
-      background-color: var(--color-orange-300);
+      background-color: var(--color-gray-300);
     }
   }
   &:focus {
-    background-color: var(--color-orange-500);
+    border-color: var(--color-orange-600);
   }
   &:active {
     color: var(--color-black);
@@ -329,6 +345,13 @@ nav a {
   }
   @media (width >= 48rem) {
     background-color: var(--color-zinc-800);
+  }
+  @media (width >= 48rem) {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-zinc-500);
+      }
+    }
   }
 }
 nav p {
@@ -352,32 +375,32 @@ nav p {
   -webkit-mask-position: center;
 }
 .icono-home {
-  mask-image: url('/static/images/home-svgrepo-com.svg');
-  -webkit-mask-image: url('/static/images/home-svgrepo-com.svg');
+  mask-image: url('/static/images/nav/home-svgrepo-com.svg');
+  -webkit-mask-image: url('/static/images/nav/home-svgrepo-com.svg');
 }
 .icono-work {
-  mask-image: url('/static/images/work-alt-svgrepo-com.svg');
-  -webkit-mask-image: url('/static/images/work-alt-svgrepo-com.svg');
+  mask-image: url('/static/images/nav/work-alt-svgrepo-com.svg');
+  -webkit-mask-image: url('/static/images/nav/work-alt-svgrepo-com.svg');
 }
 .icono-profile {
-  mask-image: url('/static/images/profile-round-1342-svgrepo-com.svg');
-  -webkit-mask-image: url('/static/images/profile-round-1342-svgrepo-com.svg');
+  mask-image: url('/static/images/nav/profile-round-1342-svgrepo-com.svg');
+  -webkit-mask-image: url('/static/images/nav/profile-round-1342-svgrepo-com.svg');
 }
 .icono-skills {
-  mask-image: url('/static/images/window-dev-tools-svgrepo-com.svg');
-  -webkit-mask-image: url('/static/images/window-dev-tools-svgrepo-com.svg');
+  mask-image: url('/static/images/nav/window-dev-tools-svgrepo-com.svg');
+  -webkit-mask-image: url('/static/images/nav/window-dev-tools-svgrepo-com.svg');
 }
 .icono-experience {
-  mask-image: url('/static/images/experience-svgrepo-com.svg');
-  -webkit-mask-image: url('/static/images/experience-svgrepo-com.svg');
+  mask-image: url('/static/images/nav/experience-svgrepo-com.svg');
+  -webkit-mask-image: url('/static/images/nav/experience-svgrepo-com.svg');
 }
 .icono-education {
-  mask-image: url('/static/images/school-svgrepo-com.svg');
-  -webkit-mask-image: url('/static/images/school-svgrepo-com.svg');
+  mask-image: url('/static/images/nav/school-svgrepo-com.svg');
+  -webkit-mask-image: url('/static/images/nav/school-svgrepo-com.svg');
 }
 .icono-contact {
-  mask-image: url('/static/images/phone-svgrepo-com.svg');
-  -webkit-mask-image: url('/static/images/phone-svgrepo-com.svg');
+  mask-image: url('/static/images/nav/phone-svgrepo-com.svg');
+  -webkit-mask-image: url('/static/images/nav/phone-svgrepo-com.svg');
 }
 .contenedorPresentacion {
   margin-top: calc(var(--spacing) * 2);
@@ -551,7 +574,7 @@ nav p {
   font-weight: var(--font-weight-extralight);
   font-style: italic;
 }
-.redes button {
+.redes a {
   display: flex;
   flex-direction: row;
   align-items: center;
