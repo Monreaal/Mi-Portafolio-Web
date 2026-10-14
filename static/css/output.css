@@ -8,12 +8,11 @@
       "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-orange-300: oklch(83.7% 0.128 66.29);
     --color-orange-500: oklch(70.5% 0.213 47.604);
     --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-zinc-500: oklch(55.2% 0.016 285.938);
-    --color-zinc-600: oklch(44.2% 0.017 285.786);
-    --color-zinc-700: oklch(37% 0.013 285.805);
     --color-zinc-800: oklch(27.4% 0.006 286.033);
     --color-zinc-900: oklch(21% 0.006 285.885);
     --color-black: #000;
@@ -273,9 +272,9 @@ nav {
   gap: calc(var(--spacing) * 2);
   overflow-x: auto;
   border-radius: calc(infinity * 1px);
-  background-color: color-mix(in srgb, oklch(21% 0.006 285.885) 90%, transparent);
+  background-color: color-mix(in srgb, #fff 70%, transparent);
   @supports (color: color-mix(in lab, red, red)) {
-    background-color: color-mix(in oklab, var(--color-zinc-900) 90%, transparent);
+    background-color: color-mix(in oklab, var(--color-white) 70%, transparent);
   }
   padding: calc(var(--spacing) * 2);
   --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.05));
@@ -294,22 +293,34 @@ nav {
     gap: calc(var(--spacing) * 4);
   }
   @media (width >= 48rem) {
+    background-color: color-mix(in srgb, oklch(21% 0.006 285.885) 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-zinc-900) 90%, transparent);
+    }
+  }
+  @media (width >= 48rem) {
     padding-block: calc(var(--spacing) * 2);
   }
 }
 nav a {
   display: flex;
-  width: calc(var(--spacing) * 9);
+  width: calc(var(--spacing) * 10.5);
   align-items: center;
   justify-content: center;
   gap: calc(var(--spacing) * 4);
   border-radius: calc(infinity * 1px);
-  background-color: var(--color-zinc-600);
+  background-color: var(--color-white);
   padding-inline: calc(var(--spacing) * 4);
   padding-block: var(--spacing);
+  --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.05));
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  --tw-shadow-color: oklch(27.4% 0.006 286.033);
+  @supports (color: color-mix(in lab, red, red)) {
+    --tw-shadow-color: color-mix(in oklab, var(--color-zinc-800) var(--tw-shadow-alpha), transparent);
+  }
   &:hover {
     @media (hover: hover) {
-      background-color: var(--color-zinc-700);
+      background-color: var(--color-orange-300);
     }
   }
   &:focus {
@@ -324,10 +335,9 @@ nav a {
   @media (width >= 48rem) {
     width: auto;
   }
-}
-nav a img {
-  max-height: calc(var(--spacing) * 5.5);
-  max-width: calc(var(--spacing) * 5.5);
+  @media (width >= 48rem) {
+    background-color: var(--color-zinc-800);
+  }
 }
 nav p {
   display: none;
@@ -336,6 +346,46 @@ nav p {
   @media (width >= 48rem) {
     display: block;
   }
+}
+.icono-nav {
+  min-height: calc(var(--spacing) * 5);
+  min-width: calc(var(--spacing) * 5);
+  background-color: var(--color-black);
+  @media (width >= 48rem) {
+    background-color: var(--color-white);
+  }
+  mask-size: cover;
+  mask-position: center;
+  -webkit-mask-size: cover;
+  -webkit-mask-position: center;
+}
+.icono-home {
+  mask-image: url('/static/images/nav/home-svgrepo-com.svg');
+  -webkit-mask-image: url('/static/images/nav/home-svgrepo-com.svg');
+}
+.icono-work {
+  mask-image: url('/static/images/nav/work-alt-svgrepo-com.svg');
+  -webkit-mask-image: url('/static/images/nav/work-alt-svgrepo-com.svg');
+}
+.icono-profile {
+  mask-image: url('/static/images/nav/profile-round-1342-svgrepo-com.svg');
+  -webkit-mask-image: url('/static/images/nav/profile-round-1342-svgrepo-com.svg');
+}
+.icono-skills {
+  mask-image: url('/static/images/nav/window-dev-tools-svgrepo-com.svg');
+  -webkit-mask-image: url('/static/images/nav/window-dev-tools-svgrepo-com.svg');
+}
+.icono-experience {
+  mask-image: url('/static/images/nav/experience-svgrepo-com.svg');
+  -webkit-mask-image: url('/static/images/nav/experience-svgrepo-com.svg');
+}
+.icono-education {
+  mask-image: url('/static/images/nav/school-svgrepo-com.svg');
+  -webkit-mask-image: url('/static/images/nav/school-svgrepo-com.svg');
+}
+.icono-contact {
+  mask-image: url('/static/images/nav/phone-svgrepo-com.svg');
+  -webkit-mask-image: url('/static/images/nav/phone-svgrepo-com.svg');
 }
 .contenedorPresentacion {
   margin-top: calc(var(--spacing) * 2);
