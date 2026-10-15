@@ -160,7 +160,7 @@ nav p {
 }
 
 .skillsSection{
-  @apply border-white border-2 w-full h-full flex flex-wrap gap-4 md:gap-8 p-4 items-center md:justify-start justify-center
+  @apply w-full h-full flex flex-wrap gap-4 md:gap-8 p-4 items-center md:justify-start justify-center
 }
 
 .stackItem{
