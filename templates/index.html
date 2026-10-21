@@ -9,13 +9,27 @@
 <body>
     
         <nav>
-            <button href=""><img src="/static/images/home-svgrepo-com.svg" alt=""> <p>Home</p></button>
-            <button href=""><img src="/static/images/work-alt-svgrepo-com.svg" alt=""> <p>Projects</p></button>
-            <button href=""><img src="/static/images/profile-round-1342-svgrepo-com.svg" alt=""> <p>About</p></button>
-            <button href=""><img src="/static/images/window-dev-tools-svgrepo-com.svg" alt=""> <p>Skills</p></button>
-            <button href=""><img src="/static/images/experience-svgrepo-com.svg" alt=""> <p>Experience</p></button>
-            <button href=""><img src="/static/images/school-svgrepo-com.svg" alt=""> <p>Education</p></button>
-            <button href=""><img src="/static/images/phone-svgrepo-com.svg" alt=""> <p>Contact</p></button>          
+            <a href="#">
+                <div class="icono-nav icono-home"></div> <p>Home</p>
+            </a>
+            <a href="#projects">
+                <div class="icono-nav icono-work"></div> <p>Projects</p>
+            </a>
+            <a href="#about">
+                <div class="icono-nav icono-profile"></div> <p>About</p>
+            </a>
+            <a href="#skills">
+                <div class="icono-nav icono-skills"></div> <p>Skills</p>
+            </a>
+            <a href="#experience">
+                <div class="icono-nav icono-experience"></div> <p>Experience</p>
+            </a>
+            <a href="#education">
+                <div class="icono-nav icono-education"></div> <p>Education</p>
+            </a>
+            <a href="#contact">
+                <div class="icono-nav icono-contact"></div> <p>Contact</p>
+            </a>           
         </nav>
 
     <div class="contenedorPresentacion">
@@ -34,16 +48,16 @@
             </div>
 
         <div class="foto">
-            <img src="static/images/miFoto.jpeg" alt="foto">
+            <img src="static/images/miFoto.jpg" alt="foto">
         </div> 
     </div>
 
     <div class="redes">
-        <button href="https://github.com/Monreaal"> <img src="/static/images/github-dark.svg" alt=""><p>Github</p></button>
-        <button href="https://www.linkedin.com/in/joaquin-romero-monreal-447b45332/"><img src="/static/images/linkedin.svg" alt=""><p>Linkedin</p></button>
-        <button href="https://www.instagram.com/flamemonreal/"><img src="/static/images/instagram-mono.svg" alt=""><p>Instagram</p></button>
+        <a href="https://github.com/Monreaal"> <img src="/static/images/redes/github-dark.svg" alt=""><p>Github</p></a>
+        <a href="https://www.linkedin.com/in/joaquin-romero-monreal-447b45332/"><img src="/static/images/redes/linkedin.svg" alt=""><p>Linkedin</p></a>
+        <a href="https://www.instagram.com/flamemonreal/"><img src="/static/images/redes/instagram-mono.svg" alt=""><p>Instagram</p></a>
     </div>
-        <div class="contenedorCarouselSlides">
+        <div id="projects" class="contenedorCarouselSlides" >
 
             <div class="carouselSlides">
                 <div class="tarjeta" style="background-image:url('/static/images/bgExample.jpg');">
@@ -81,29 +95,189 @@
             </button>
         </div>
     
-    <div class="aboutMe">
-                <h1>.../About me...</h1>
+    <div id="about" class="aboutMe">
+                <h2>.../About me...</h2>
                 <p class="p-normal">Soy un apasionado por el Front-end, me gusta mucho aprender usando la IA, si me tuviera que definir en una palabra, sería <span class="p-bold">aferrado</span>, en el buen sentido, claro. No desisto de un problema hasta resolverlo y busco por distintos panoramas. 
                     Mi nombre es <span class="p-bold">Joaquin</span> y soy su mejor opcion ;).</p>
     </div>
     
-    <div class="skillContainer">
-        <div class="skillCard">
-            <h2>JavaScript</h2>
-            <p>Experto en JavaScript y sus frameworks modernos.</p>
+    <div id="skills" class="skillContainer">
+
+        <h1 >Mis Habilidades</h1>
+        <p class="p-normal">A continuación se muestran algunas de las habilidades que he adquirido a lo largo de mi carrera como desarrollador web. 
+            Estas habilidades me permiten crear aplicaciones web modernas y eficientes, así como también trabajar en equipo y resolver problemas de manera efectiva.</p>
+
+        <h2 class="skillTitle">Front-end</h2>
+        <div class="skillsSection">
+
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(242, 78, 30) 0px 0px 10px); border: 4px solid rgb(242, 78, 30);">
+                    <img src="/static/images/skills/html5.svg" alt="HTML">
+                </div>
+                <p>HTML</p>
+            </div>
+
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(30, 140, 242) 0px 0px 10px); border: 4px solid rgb(30, 140, 242);">
+                    <img src="/static/images/skills/css3.svg" alt="CSS">
+                </div>
+                <p>CSS</p>
+            </div>
+            
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(56, 189, 248) 0px 0px 10px); border: 4px solid rgb(56, 189, 248);">
+                    <img src="/static/images/skills/tailwind-css.svg" alt="Tailwind CSS">
+                </div>
+                <p>Tailwind CSS</p>
+            </div>
+
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(247, 223, 30) 0px 0px 10px); border: 4px solid rgb(247, 223, 30);">
+                    <img src="/static/images/skills/javascript.svg" alt="JavaScript">
+                </div>
+                <p>JavaScript</p>
+            </div>
+
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(49, 120, 198) 0px 0px 10px); border: 4px solid rgb(49, 120, 198);">
+                    <img src="/static/images/skills/typescript.svg" alt="TypeScript">
+                </div>
+                <p>TypeScript</p>
+            </div>
+
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(97, 218, 251) 0px 0px 10px); border: 4px solid rgb(97, 218, 251);">
+                    <img src="/static/images/skills/react.svg" alt="React">
+                </div>
+                <p>React</p>
+            </div>
+            
         </div>
-        <div class="skillCard">
-            <h2>Python</h2>
-            <p>Competente en Python para desarrollo web y automatización.</p>
+            
+        <h2 class="skillTitle">Back-end</h2>
+        <div class="skillsSection">
+            
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(55, 118, 171) 0px 0px 10px); border: 4px solid rgb(55, 118, 171);">
+                    <img src="/static/images/skills/python.svg" alt="Python">
+                </div>
+                <p>Python</p>
+            </div>
+
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(62, 207, 142) 0px 0px 10px); border: 4px solid rgb(62, 207, 142);">
+                    <img src="/static/images/skills/supabase.svg" alt="Supabase">
+                </div>
+                <p>Supabase</p>
+            </div>
+
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(51, 103, 145) 0px 0px 10px); border: 4px solid rgb(51, 103, 145);">
+                    <img src="/static/images/skills/postgresql.svg" alt="PostgreSQL">
+                </div>
+                <p>PostgreSQL</p>
+            </div>
+            
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(255, 255, 255) 0px 0px 10px); border: 4px solid rgb(255, 255, 255);">
+                    <img src="/static/images/skills/flask.svg" alt="Flask">
+                </div>
+                <p>Flask</p>
+            </div>
+
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(68, 121, 161) 0px 0px 10px); border: 4px solid rgb(68, 121, 161);">
+                    <img src="/static/images/skills/mysql.svg" alt="MySQL">
+                </div>
+                <p>MySQL</p>
+            </div>
+
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(104, 33, 122) 0px 0px 10px); border: 4px solid rgb(104, 33, 122);">
+                    <img src="/static/images/skills/csharp.svg" alt="C#">
+                </div>
+                <p>C#</p>
+            </div>
+
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(83, 158, 67) 0px 0px 10px); border: 4px solid rgb(83, 158, 67);">
+                    <img src="/static/images/skills/nodedotjs.svg" alt="Node.js">
+                </div>
+                <p>Node.js</p>
+            </div>
+
         </div>
-        <div class="skillCard">
-            <h2>React</h2>
-            <p>Dominio de React y su ecosistema para crear interfaces dinámicas.</p>
+
+        <h2 class="skillTitle">Análisis de Datos y Herramientas</h2>
+        <div class="skillsSection">
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(33, 115, 70) 0px 0px 10px); border: 4px solid rgb(33, 115, 70);">
+                    <img src="/static/images/skills/microsoft-excel.svg" alt="Microsoft Excel">
+                </div>
+                <p>Microsoft Excel</p>
+            </div>
+
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(243, 118, 38) 0px 0px 10px); border: 4px solid rgb(243, 118, 38);">
+                    <img src="/static/images/skills/jupyter.svg" alt="Jupyter">
+                </div>
+                <p>Jupyter</p>
+            </div>
+
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(72, 17, 225) 0px 0px 10px); border: 4px solid rgb(72, 17, 225);">
+                    <img src="/static/images/skills/opencv.svg" alt="OpenCV">
+                </div>
+                <p>OpenCV</p>
+            </div>
         </div>
-        <div class="skillsImg">
-            <img src="/static/images/skills.png" alt="Skills Image">
+
+        <h2 class="skillTitle">Infraestructura</h2>
+        <div class="skillsSection">
+
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(233, 84, 32) 0px 0px 10px); border: 4px solid rgb(233, 84, 32);">
+                    <img src="/static/images/skills/ubuntu.svg" alt="Ubuntu">
+                </div>
+                <p>Ubuntu</p>
+            </div>
+
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(32, 183, 233) 0px 0px 10px); border: 4px solid rgb(32, 183, 233);">
+                    <img src="/static/images/skills/cron.svg" alt="Ubuntu">
+                </div>
+                <p>Cron Jobs</p>
+            </div>
+
         </div>
+
+        <h2 class="skillTitle">Otras Herramientas</h2>
+        <div class="skillsSection">
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(162, 89, 255) 0px 0px 10px); border: 4px solid rgb(162, 89, 255);">
+                    <img src="/static/images/skills/figma.svg" alt="Figma">
+                </div>
+                <p>Figma</p>
+            </div>
+
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(255, 255, 255) 0px 0px 10px); border: 4px solid rgb(255, 255, 255);">
+                    <img src="/static/images/skills/github.svg" alt="GitHub">
+                </div>
+                <p>GitHub</p>
+            </div>
+
+            <div class="stackItem">
+                <div class="stackIcon" style="filter: drop-shadow(rgb(240, 80, 50) 0px 0px 10px); border: 4px solid rgb(240, 80, 50);">
+                    <img src="/static/images/skills/git.svg" alt="Git">
+                </div>
+                <p>Git</p>
+            </div>
+
+        </div>
+
     </div>
+
 
 <script src="/static/js/scripts.js"></script>
 </div>
