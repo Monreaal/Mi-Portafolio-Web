@@ -26,22 +26,46 @@ body{
   @apply bg-zinc-900 text-white items-center justify-center min-h-screen flex flex-col w-full pb-10
 }
 
+.more-sections{
+  @apply bg-zinc-700/50 shadow-xs shadow-zinc-800 border border-amber-50/5 rounded-full
+  fixed  bottom-15 right-3 
+  cursor-pointer no-scrollbar flex
+  p-0.5 m-3 z-100 
+  backdrop-blur-xs 
+}
+.desplegable{
+   @apply text-black absolute right-0 bottom-full mb-2 w-max bg-white shadow-xs shadow-zinc-800 border border-amber-50/5 backdrop-blur-md rounded-xl p-0.5 flex flex-col z-10 gap-1
+  
+   origin-bottom transform transition-all duration-100 ease-out 
+  scale-y-0 opacity-0 peer-checked:scale-y-100 peer-checked:opacity-100
+  hover:backdrop-blur-[1px]                      
+}
+.desplegable a{
+  @apply flex justify-start items-center px-4 py-2 hover:bg-zinc-300 rounded-lg transition-colors
+
+  focus:bg-orange-500 
+  gap-2
+  hover:backdrop-blur-[1px]
+}
+
 nav{
-  @apply bg-zinc-900/80 shadow-xs shadow-zinc-800 
+  @apply bg-olive-300/10 shadow-sm shadow-white/20 border border-y-white/20 border-x-white/10
   fixed rounded-full bottom-0 md:top-0 md:bottom-auto overflow-x-auto 
   no-scrollbar flex flex-row justify-center 
-  md:gap-4 md:py-2 p-0.5 m-3 z-20 
+  md:gap-4 md:py-2 p-0.5 m-3 z-100 gap-1
+  
+  backdrop-blur-xs
 }
 nav a{
-  @apply hover:bg-zinc-700  
+  @apply hover:bg-white/20  
   focus:bg-orange-500 
-  active:text-black 
-  py-3 px-9 rounded-full 
+  py-3 px-7 rounded-full 
   flex gap-2 justify-center items-center w-9 
   md:w-auto
+  hover:backdrop-blur-[1px]
 }
 nav a img{ 
-  @apply  max-h-4.5 max-w-4.5
+  @apply  max-h-5.5 max-w-5.5
 }
 nav p{ /*hidden md:block Oculto en moviles, se muestra en pantallas grandes*/
   @apply hidden md:block font-light
