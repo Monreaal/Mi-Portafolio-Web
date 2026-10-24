@@ -48,28 +48,31 @@ body{
   hover:backdrop-blur-[1px]
 }
 
-nav{
-  @apply bg-olive-300/10 shadow-sm shadow-white/20 border border-y-white/20 border-x-white/10
-  fixed rounded-full bottom-0 md:top-0 md:bottom-auto overflow-x-auto 
-  no-scrollbar flex flex-row justify-center 
-  md:gap-4 md:py-2 p-0.5 m-3 z-100 gap-1
-  
-  backdrop-blur-xs
+nav {
+  @apply bg-olive-300/10 shadow-sm shadow-white/20 border border-y-white/20 border-x-white/10 backdrop-blur-xs
+  fixed rounded-full overflow-x-auto no-scrollbar flex flex-row justify-center z-100 m-3;
+
+  @apply bottom-0 p-0.5 gap-1 
+  md:top-0 md:bottom-auto md:gap-3 md:py-1 md:px-1;
 }
-nav a{
-  @apply hover:bg-white/20  
-  focus:bg-orange-500 
-  py-3 px-7 rounded-full 
-  flex gap-2 justify-center items-center w-9 
-  md:w-auto
-  hover:backdrop-blur-[1px]
+
+nav a {
+  @apply hover:bg-white/20 focus:bg-orange-500 transition-colors rounded-full 
+  flex gap-2 justify-center items-center hover:backdrop-blur-[1px];
+
+  @apply py-3 px-7 w-9 
+  md:py-1 md:px-4 md:w-auto;
 }
-nav a img{ 
-  @apply  max-h-5.5 max-w-5.5
+
+nav a img { 
+  @apply max-h-5.5 max-w-5.5;
 }
-nav p{ /*hidden md:block Oculto en moviles, se muestra en pantallas grandes*/
-  @apply hidden md:block font-light
+
+nav p { 
+  /* Texto visible solo en escritorio */
+  @apply hidden md:block font-light;
 }
+
 .contenedorPresentacion { /**md:grid-cols-[1fr_1fr_minmax(0,350px)] define el ancho maximo de la col-3*/
   @apply  mb-5 mt-2 px-3 md:pt-12 md:m-3 grid grid-cols-2 grid-rows-3 md:grid-cols-[minmax(0,500px)_minmax(0,800px)_minmax(0,300px)] md:grid-rows-2 text-white font-bold text-left
 }
