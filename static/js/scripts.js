@@ -63,3 +63,24 @@ window.addEventListener('resize', updateCarousel);
 
 // Inicializar carrusel
 updateCarousel();
+
+//-------------------Intersection Observer----------------------------------------
+
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // ESTO SE QUEDA: Es lo que cambia el color de los botones (ScrollSpy)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => link.classList.remove('bg-black/60', 'backdrop-blur-sm'));
+                const activeId = entry.target.getAttribute('id');
+                const activeLink = document.querySelector(`.nav-link[href="#${activeId}"]`);
+                if (activeLink) activeLink.classList.add('bg-black/60', 'backdrop-blur-sm');
+            }
+        });
+    }, { threshold: 0.5 });
+
+    sections.forEach(section => observer.observe(section));
+});
